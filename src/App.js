@@ -27,8 +27,9 @@ render() {
         <Botao texto= 'Jogar' cor='#841584' Func={() =>{this.Dado()}} />
       </View>
       <View style={estilo.fonte}>
-        <Text>{this.state.resultado}</Text>
+        <Text>{this.state.resultado + 1}</Text>
         <Text>Resultado:</Text>
+        <Dados nome={this.state.resultado} />
         {/* <Dados nome={this.state.resultado} /> */}
       </View>
     </View>
@@ -38,16 +39,16 @@ render() {
 
 const estilo = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
   },
   botao: {
-    marginTop: 10,
+    marginTop: 60,
     flexDirection: 'row',
     justifyContent: 'space-around'
   },
   fonte: {
-    marginTop: 20,
-    flexDirection: 'column',
+    marginTop: 35,
+    flexDirection: 'column-reverse',
     alignItems:'center'
   }
 })
