@@ -10,7 +10,7 @@ const AppNavigator = createAppContainer(
         Home: {
             screen: Home
         },
-        Tela1: {
+        Dado1: {
             screen: Tela1
         }, 
         Tela2: {

@@ -1,23 +1,67 @@
 import React, { Component} from 'react';
-import { StatusBar, View, Text} from 'react-native'
+import { StyleSheet, View, Text} from 'react-native';
+import Botao from './Botao';
+import Dados from './Dados';
+
+
+const estilo = StyleSheet.create({
+    container: {
+      flex: 1,
+    },
+    botao: {
+      marginTop: 60,
+      flexDirection: 'row',
+      justifyContent: 'space-around'
+    },
+    fonte: {
+      marginTop: 35,
+      flexDirection: 'column-reverse',
+      alignItems:'center'
+    }
+  });
+  
 
 export default class Tela1 extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+          resultado:0,
+        };
+    };
+    
+      Dado = () =>{
+        const resultado= Math.floor(Math.random() * 6);
+
+      
+          this.setState({ 
+            resultado
+        });
+      }
+      
     static navigationOptions = {
-        title: 'Tela1',
+        title: '1 Dado',
         headerStyle: {
-            backgroundColor:'#f4511e'
+            backgroundColor:'#f00'
         },
-        headerTintColor:'#fff',
+        headerTintColor:'#000',
         headerTitleStyle: {
-            fontWeigth:'bold'
+            fontWeight:'500'
         }
     }
+
     render(){
-        const{} = this.props.navigation.getParam('dados')
         return(
-            <View>
-                <Text>Tela 1 </Text>
-            </View>
+        <View style={estilo.container}>
+            <View style={estilo.botao}>
+            <Botao texto= 'Jogar' cor='#f00' Func={this.Dado} />
+          </View>
+          <View style={estilo.fonte}>
+            <Text>{this.state.resultado + 1}</Text>
+            <Text>Resultado:</Text>
+            <Dados nome={this.state.resultado} />
+          </View>
+        </View>
         )
     }
+
 }

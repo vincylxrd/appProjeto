@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
-import { View, Button} from 'react-native';
+import { View, Button, Text} from 'react-native';
+
 
 export default class Home extends Component {
 
@@ -8,16 +9,16 @@ export default class Home extends Component {
         headerStyle: {
             backgroundColor: '#f4511e'
         },
-        headerTintColor:'#fff',
+        headerTintColor:'#004',
         headerTitleStyle: {
-            fontWeight:'bold'
+            fontWeight:'500'
         }
     }
     render() {
         const {navigate} = this.props.navigation;
         return ((
           <View >
-            <Button onPress={()=> {navigate('Tela1')}} title="Tela 1" />
+            <Button onPress={()=> {navigate('Dado1')}} title="Tela 1" />
             <Button onPress={()=> {navigate('Tela2')}} title="Tela 2" />        
             </View>
          ) );
