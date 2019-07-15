@@ -9,7 +9,7 @@ export default class Home extends Component {
           <View style={estilo.container} >
               <View style={estilo.botoes}>
                 <View>
-                  <Button onPress={()=> {navigate('Dado1')}}  title="1 Dado" />
+                  <Button onPress={()=> {navigate('Dado1')}}  title="1 Dado" color='#f00' />
                 </View>
                 <View style={estilo.espaco}>
                   <Button onPress={()=> {navigate('Tela2')}} title="2 Dados" />  
