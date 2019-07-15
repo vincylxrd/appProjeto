@@ -17,6 +17,9 @@ const estilo = StyleSheet.create({
       marginTop: 35,
       flexDirection: 'column-reverse',
       alignItems:'center'
+    }, 
+    numero: {
+    fontSize: 25,
     }
   });
   
@@ -42,6 +45,7 @@ export default class Tela1 extends Component {
         title: '1 Dado',
         headerStyle: {
             backgroundColor:'#f00'
+            
         },
         headerTintColor:'#000',
         headerTitleStyle: {
@@ -56,7 +60,7 @@ export default class Tela1 extends Component {
             <Botao texto= 'Jogar' cor='#f00' Func={this.Dado} />
           </View>
           <View style={estilo.fonte}>
-            <Text>{this.state.resultado + 1}</Text>
+            <Text style={estilo.numero}> {this.state.resultado + 1} </Text>
             <Text>Resultado:</Text>
             <Dados nome={this.state.resultado} />
           </View>

@@ -8,7 +8,8 @@ import Home from '../components/Home';
 const AppNavigator = createAppContainer(
     createStackNavigator({
         Home: {
-            screen: Home
+            screen: Home,
+            navigationOptions: { title: 'Home' }
         },
         Dado1: {
             screen: Tela1
@@ -16,6 +17,18 @@ const AppNavigator = createAppContainer(
         Tela2: {
             screen: Tela2
         }
+    }, 
+    {
+        initialRouteName: 'Home',
+            defaultNavigationOptions: {
+                headerStyle: {
+                    backgroundColor: '#f00',
+                  },
+                  headerTintColor: '#000',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                  },
+        },
     })
 );
 

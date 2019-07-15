@@ -9,14 +9,20 @@ const estilo = StyleSheet.create({
       flex: 1,
     },
     botao: {
-      marginTop: 60,
       flexDirection: 'row',
       justifyContent: 'space-around'
     },
     fonte: {
-      marginTop: 35,
+      marginTop: 5,
       flexDirection: 'column-reverse',
       alignItems:'center'
+    }, 
+    resultado: {
+      fontSize: 15,
+      flexDirection: 'row'
+    },
+    numero: {
+      fontSize: 25,
     }
   });
   
@@ -56,10 +62,10 @@ export default class Tela2 extends Component {
     render(){
         return(
         <View style={estilo.container}>
-            <View style={estilo.botao}>
+        <View style={estilo.botao}>
           </View>
           <View style={estilo.fonte}>
-            <Text>{this.state.resultado + 1}</Text>
+            <Text style={estilo.numero}> {this.state.resultado + 1}</Text>
             <Text>Resultado:</Text>
             <Dados nome={this.state.resultado} />
           </View> 
@@ -67,8 +73,10 @@ export default class Tela2 extends Component {
             <Botao texto= 'Jogar' cor='#f00' Func={this.Dado} />
           </View>
           <View style={estilo.fonte}>
-            <Text>{this.state.resultado1 + 1}</Text>
-            <Text>Resultado:</Text>
+          <Text style={estilo.resultado}> Resultado:  </Text>
+          <Text style={estilo.numero}> {this.state.resultado1 + 1} </Text>
+          </View>
+          <View style={estilo.fonte}>
             <Dados nome={this.state.resultado1} />
         </View>  
         </View>       
